@@ -16,3 +16,7 @@ git add * # to add all the files to git
 git status # check the status of the files
 git commit -m 'message' # commiting the changes.
 
+
+# to add to the github
+git remote add origin git@github.com:tahsin-github/azure-text-analysis.git
+git push -u origin master
