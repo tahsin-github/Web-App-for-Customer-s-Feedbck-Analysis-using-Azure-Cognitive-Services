@@ -1,0 +1,85 @@
+
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+div.c {
+    text-indent: 10%;
+}
+</style>
+</head>
+<body>
+
+<div>
+  <center>
+<h2>Text Analysis Results</h2>
+</center>
+</div>
+
+
+<p>
+<table>
+  <tr>
+    <th>Text Analysis</th>
+    <th>Result</th>
+    
+  </tr>
+
+  
+  <tr>
+    <td>Detected Language</td>
+    <td> {{ results.get('detectedLanguage') }} </td>
+    
+  </tr>
+  <tr>
+    <td>Detected Language iso639Name</td>
+    <td>{{ results.get('language_iso639Name') }} </td>
+    
+  </tr>
+  <tr>
+    <td>Sentiment Analysis</td>
+    <td>{{ results.get('sentiment') }} </td>
+    
+ 
+</table>
+
+</p>
+
+
+
+<h2>Main Text:</h2>
+<div class="c">
+<p>{{ results.get('main_text') }}</p>
+</div>
+
+
+<h2>Translation:</h2>
+<div class="c">
+<p>{{ results.get('translation') }}</p>
+</div>
+
+
+<h2>Key Phrases:</h2>
+<div class="c">
+<p>{{ results.get('KeyPhrase') }}</p>
+</div>
+
+</body>
+
+{% endblock content %}
